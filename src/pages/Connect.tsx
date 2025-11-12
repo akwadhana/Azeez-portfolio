@@ -44,7 +44,8 @@ const contacts = [
     ),
     label: "LinkedIn",
     value: "Connect with me",
-    href: "https://linkedin.com/in/your-profile",
+    href: "https://www.linkedin.com/in/azeez-yusuf",
+
   },
 ];
 
