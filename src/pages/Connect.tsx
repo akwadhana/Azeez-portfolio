@@ -1,4 +1,3 @@
-"use client";
 
 import { useState, useMemo, type ChangeEvent, type FormEvent } from "react";
 
@@ -117,12 +116,12 @@ export default function ContactAndSummary() {
   };
 
   return (
-    <main className="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <main className="bg-slate-50 text-slate-900">
       <section className="py-8">
         <div className="mx-auto max-w-5xl px-4">
           <header className="mb-8 text-center">
             <h2 className="text-2xl font-semibold sm:text-3xl">Let's Connect</h2>
-            <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-600 dark:text-slate-400">
+            <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-600">
               Ready to discuss your next enterprise technology project? Let's explore how my
               expertise can drive your business objectives forward.
             </p>
@@ -132,25 +131,25 @@ export default function ContactAndSummary() {
 
             {/* Contact Left */}
             <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">
+              <h3 className="text-lg font-semibold text-slate-800">
                 Get in Touch
               </h3>
 
               <ul className="space-y-4">
                 {contacts.map((c, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-blue-700 ring-1 ring-inset ring-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-900/60">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-blue-700 ring-1 ring-inset ring-blue-200">
                       <c.icon className="h-4 w-4" />
                     </div>
                     <div className="pt-0.5">
-                      <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                      <p className="text-sm font-semibold text-slate-700">
                         {c.label}
                       </p>
                       <a
                         href={c.href}
                         target={c.label === "LinkedIn" ? "_blank" : undefined}
                         rel={c.label === "LinkedIn" ? "noopener noreferrer" : undefined}
-                        className="text-sm text-slate-600 underline decoration-slate-300/70 underline-offset-2 hover:text-slate-800 dark:text-slate-300 dark:hover:text-white"
+                        className="text-sm text-slate-600 underline decoration-slate-300/70 underline-offset-2 hover:text-slate-800"
                       >
                         {c.value}
                       </a>
@@ -160,14 +159,14 @@ export default function ContactAndSummary() {
               </ul>
 
               <div>
-                <h4 className="mb-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                <h4 className="mb-3 text-sm font-semibold text-slate-700">
                   Areas of Expertise
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {expertise.map((tag, i) => (
                     <span
                       key={i}
-                      className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700"
+                      className="inline-flex items-center rounded-md bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-200"
                     >
                       {tag}
                     </span>
@@ -179,7 +178,7 @@ export default function ContactAndSummary() {
             {/* Contact Form */}
             <form onSubmit={onSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300" htmlFor="name">
+                <label className="block text-sm font-medium text-slate-700" htmlFor="name">
                   Full Name <span className="text-red-600">*</span>
                 </label>
                 <input
@@ -190,12 +189,12 @@ export default function ContactAndSummary() {
                   placeholder="Your full name"
                   required
                   autoComplete="name"
-                  className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-blue-400"
+                  className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300" htmlFor="email">
+                <label className="block text-sm font-medium text-slate-700" htmlFor="email">
                   Email Address <span className="text-red-600">*</span>
                 </label>
                 <input
@@ -206,7 +205,7 @@ export default function ContactAndSummary() {
                   placeholder="your.email@company.com"
                   required
                   autoComplete="email"
-                  className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-blue-400"
+                  className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 />
                 {!isEmailValid && form.email.length > 0 && (
                   <p className="mt-1 text-xs text-red-600">Please enter a valid email.</p>
@@ -214,7 +213,7 @@ export default function ContactAndSummary() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300" htmlFor="company">
+                <label className="block text-sm font-medium text-slate-700" htmlFor="company">
                   Company/Organization
                 </label>
                 <input
@@ -223,12 +222,12 @@ export default function ContactAndSummary() {
                   value={form.company}
                   onChange={update("company")}
                   placeholder="Your company name"
-                  className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-blue-400"
+                  className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300" htmlFor="details">
+                <label className="block text-sm font-medium text-slate-700" htmlFor="details">
                   Project Details <span className="text-red-600">*</span>
                 </label>
                 <textarea
@@ -239,16 +238,16 @@ export default function ContactAndSummary() {
                   required
                   maxLength={maxChars}
                   rows={5}
-                  className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-blue-400"
+                  className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                 />
-                <div className="mt-1 flex justify-end text-xs text-slate-500 dark:text-slate-400">
+                <div className="mt-1 flex justify-end text-xs text-slate-500">
                   {charCount}/{maxChars} characters
                 </div>
               </div>
 
               {status === "error" && <p className="text-sm text-red-600">{error}</p>}
               {status === "success" && (
-                <p className="rounded-md bg-green-50 px-3 py-2 text-sm text-green-700 ring-1 ring-inset ring-green-200 dark:bg-green-900/20 dark:text-green-300 dark:ring-green-900/40">
+                <p className="rounded-md bg-green-50 px-3 py-2 text-sm text-green-700 ring-1 ring-inset ring-green-200">
                   Thanks! Your message was sent. I’ll get back to you shortly.
                 </p>
               )}
@@ -256,7 +255,7 @@ export default function ContactAndSummary() {
               <button
                 type="submit"
                 disabled={!isValid || status === "sending"}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-blue-500 dark:hover:bg-blue-600"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 <SendIcon className="h-4 w-4" />
                 {status === "sending" ? "Sending..." : "Send Message"}
