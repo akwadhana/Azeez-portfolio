@@ -284,26 +284,36 @@ export default function KeyProjectsSection() {
         </motion.header>
 
         {/* Stats Row */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4"
-        >
-          {stats.map((s) => (
-            <motion.div
-              key={s.label}
-              variants={cardVariants}
-              className="rounded-xl bg-white px-4 py-4 text-center shadow-sm ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800"
-            >
-              <div className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                {s.value}
-              </div>
-              <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">{s.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
+<motion.div
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4"
+>
+  {stats.map((s) => (
+    <motion.div
+      key={s.label}
+      variants={cardVariants}
+      whileHover={{
+        scale: 1.06,
+        y: -4,
+      }}
+      transition={{ type: "spring", stiffness: 300, damping: 18 }}
+      className="rounded-xl bg-white px-4 py-4 text-center shadow-sm ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800 cursor-pointer transition-colors duration-300 hover:text-blue-600"
+    >
+      <div className="text-lg font-semibold text-blue-600 dark:text-slate-100">
+        {s.value}
+      </div>
+      <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+        {s.label}
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
+
+
+
 
         {/* Project Cards */}
         <motion.div

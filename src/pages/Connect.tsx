@@ -180,35 +180,7 @@ function TextArea({
 }
 
 /* ---------- Components ---------- */
-function StatsSummary() {
-  return (
-    <section className="bg-slate-50 py-6 dark:bg-slate-950">
-      <div className="mx-auto max-w-5xl px-4">
-        <div className="rounded-2xl bg-blue-50/80 p-4 ring-1 ring-inset ring-blue-100 dark:bg-blue-950/30 dark:ring-blue-900/50">
-          <p className="text-center text-sm font-semibold text-slate-700 dark:text-slate-300">
-            Project Portfolio Summary
-          </p>
 
-          <div className="mt-3 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {stats.map((s, i) => (
-              <div
-                key={i}
-                className="rounded-lg bg-white/70 p-4 text-center shadow-sm ring-1 ring-slate-200 dark:bg-slate-900/60 dark:ring-slate-800"
-              >
-                <div className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                  {s.value}
-                </div>
-                <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function ContactLeft() {
   return (
@@ -404,7 +376,7 @@ function ContactForm() {
 export default function ContactAndSummary() {
   return (
     <main className="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      <StatsSummary />
+     
 
       <section className="py-8">
         <div className="mx-auto max-w-5xl px-4">
