@@ -49,7 +49,7 @@ const experiences = [
   },
 ];
 
-/* ========== Small UI Components ========== */
+/* ========== Icons ========== */
 const CalendarIcon = ({ className = "h-4 w-4" }: { className?: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -85,7 +85,7 @@ function Bullet({ children }: { children: React.ReactNode }) {
   );
 }
 
-/* ========== Animation Variants (Typed) ========== */
+/* ========== Motion Variants ========== */
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -99,23 +99,21 @@ const itemVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut" as const, // ✅ Properly typed
-    },
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
 };
 
 /* ========== Main Component ========== */
 export default function ExperienceTimeline() {
   return (
-    <section className="bg-slate-50 py-10 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="bg-white sm:bg-slate-50 py-10 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+      <div className="mx-auto max-w-full sm:max-w-5xl px-4 sm:px-6">
+        {/* Header */}
         <header className="mb-6 text-center">
           <h2 className="text-2xl font-semibold sm:text-3xl">
             Professional Experience
           </h2>
-          <p className="mx-auto mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-400">
+          <p className="mx-auto mt-2 max-w-full sm:max-w-3xl text-sm text-slate-600 dark:text-slate-400">
             Over 5 years of progressive experience in IT project management,
             delivering enterprise solutions across banking, telecom, public
             sector, and fintech industries.
@@ -130,19 +128,21 @@ export default function ExperienceTimeline() {
           viewport={{ once: true, amount: 0.2 }}
           className="relative"
         >
-          <span className="pointer-events-none absolute left-1 top-0 h-full w-px bg-blue-100 dark:bg-blue-900/40" />
+          {/* Vertical line */}
+          <span className="absolute left-5 sm:left-6 top-0 h-full w-px bg-blue-100 dark:bg-blue-900/40" />
+
           <div className="space-y-6">
             {experiences.map((exp) => (
               <motion.div
                 key={`${exp.company}-${exp.role}-${exp.period}`}
                 variants={itemVariants}
-                className="relative pl-10"
+                className="relative pl-10 sm:pl-12"
               >
                 {/* Timeline dot */}
-                <span className="absolute left-1 top-8 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-blue-500 ring-4 ring-blue-100 dark:ring-blue-900/50" />
+                <span className="absolute left-5 sm:left-6 top-7 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-500 ring-4 ring-blue-100 dark:ring-blue-900/50" />
 
                 {/* Card */}
-                <article className="rounded-2xl border border-blue-200/60 bg-white p-5 shadow-sm ring-1 ring-blue-100/60 transition hover:shadow-md dark:border-blue-900/40 dark:bg-slate-900 dark:ring-blue-900/30">
+                <article className="rounded-2xl border border-blue-200/60 bg-white p-5 shadow-sm ring-1 ring-blue-100/60 transition hover:shadow-md sm:p-6">
                   <header className="mb-2">
                     <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
                       {exp.role}
@@ -151,7 +151,7 @@ export default function ExperienceTimeline() {
                       {exp.company}
                     </p>
 
-                    <div className="mt-2 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                    <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
                       <CalendarIcon />
                       <span>{exp.period}</span>
                       {exp.current && (

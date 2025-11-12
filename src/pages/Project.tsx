@@ -1,8 +1,5 @@
-
-
 import { useMemo, useState } from "react";
 import { motion, type Variants } from "framer-motion";
-
 
 type Category = "Software Development" | "Infrastructure" | "Security";
 
@@ -125,7 +122,6 @@ const Star = ({ className = "h-4 w-4" }: { className?: string }) => (
   </svg>
 );
 
-
 function formatBudget(value: number, currency: string = "USD"): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -145,16 +141,16 @@ const categoryStyles: Record<Category, string> = {
 
 /* ========== Motion Variants ========== */
 const containerVariants: Variants = {
-  hidden: { opacity: 0, y: 60 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, when: "beforeChildren", staggerChildren: 0.15 },
+    transition: { duration: 0.8, when: "beforeChildren", staggerChildren: 0.1 },
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.98 },
+  hidden: { opacity: 0, y: 20, scale: 0.98 },
   visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
@@ -182,11 +178,11 @@ function ProjectCard({ p }: { p: Project }) {
   return (
     <motion.article
       variants={cardVariants}
-      whileHover={{ y: -5, scale: 1.03, transition: { duration: 0.3 } }}
+      whileHover={{ y: -5, scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
     >
-      <div className="mb-3 flex items-center justify-between">
+      <div className="mb-3 flex items-center justify-between flex-wrap gap-2">
         <Pill className={categoryStyles[p.category]}>{p.category}</Pill>
 
         <div className="flex items-center gap-2">
@@ -205,7 +201,7 @@ function ProjectCard({ p }: { p: Project }) {
         </div>
       </div>
 
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex items-start justify-between gap-4 flex-wrap">
         <h3 className="text-base font-semibold text-slate-800 dark:text-slate-100">
           {p.title}
         </h3>
@@ -261,22 +257,22 @@ export default function KeyProjectsSection() {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8 }}
-      className="bg-slate-50 py-16 text-slate-900 dark:bg-slate-950 dark:text-slate-100"
+      className="bg-white sm:bg-slate-50 py-16 text-slate-900 dark:bg-slate-950 dark:text-slate-100"
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-full px-4 sm:max-w-6xl sm:px-6">
         {/* Header */}
         <motion.header
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="text-center"
         >
           <h2 className="text-3xl font-bold sm:text-4xl">Key Projects Delivered</h2>
-          <p className="mx-auto mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-400">
+          <p className="mx-auto mt-2 max-w-full sm:max-w-3xl text-sm text-slate-600 dark:text-slate-400">
             A showcase of enterprise technology projects spanning software
             development, infrastructure deployment, and digital transformation
             initiatives across multiple industries.
@@ -284,36 +280,30 @@ export default function KeyProjectsSection() {
         </motion.header>
 
         {/* Stats Row */}
-<motion.div
-  variants={containerVariants}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4"
->
-  {stats.map((s) => (
-    <motion.div
-      key={s.label}
-      variants={cardVariants}
-      whileHover={{
-        scale: 1.06,
-        y: -4,
-      }}
-      transition={{ type: "spring", stiffness: 300, damping: 18 }}
-      className="rounded-xl bg-white px-4 py-4 text-center shadow-sm ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800 cursor-pointer transition-colors duration-300 hover:text-blue-600"
-    >
-      <div className="text-lg font-semibold text-blue-600 dark:text-slate-100">
-        {s.value}
-      </div>
-      <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-        {s.label}
-      </div>
-    </motion.div>
-  ))}
-</motion.div>
-
-
-
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mx-auto mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4"
+        >
+          {stats.map((s) => (
+            <motion.div
+              key={s.label}
+              variants={cardVariants}
+              whileHover={{ scale: 1.06, y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 18 }}
+              className="rounded-xl bg-white px-4 py-4 text-center shadow-sm ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800 cursor-pointer transition-colors duration-300 hover:text-blue-600"
+            >
+              <div className="text-lg font-semibold text-blue-600 dark:text-slate-100">
+                {s.value}
+              </div>
+              <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                {s.label}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Project Cards */}
         <motion.div
@@ -330,10 +320,7 @@ export default function KeyProjectsSection() {
         </motion.div>
 
         {/* Button */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="flex justify-center mt-10"
-        >
+        <motion.div whileHover={{ scale: 1.05 }} className="flex justify-center mt-10">
           <button
             onClick={() => setShowFeatured((prev) => !prev)}
             className="rounded-full bg-emerald-600 px-5 py-2 text-xs font-semibold text-white shadow hover:bg-emerald-700 transition"
