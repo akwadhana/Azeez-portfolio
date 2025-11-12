@@ -1,6 +1,6 @@
-import React, { useMemo, useState, type ChangeEvent, type FormEvent } from "react";
+import  { useMemo, useState, type ChangeEvent, type FormEvent } from "react";
 
-/* ---------- Data ---------- */
+
 
 interface Contact {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;

@@ -1,7 +1,7 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import newProfile from "../assets/Azeez.jpeg";
-import Rack from "../assets/rack.jpg";
+import Rack from "../assets/Rack.jpg";
 
 interface ProfilePageProps {
   scrollToProjects: () => void;

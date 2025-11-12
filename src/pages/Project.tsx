@@ -1,9 +1,9 @@
-"use client";
 
-import React, { useMemo, useState } from "react";
+
+import { useMemo, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 
-/* ========== Types ========== */
+
 type Category = "Software Development" | "Infrastructure" | "Security";
 
 interface Project {
