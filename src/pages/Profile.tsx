@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import newProfile from "../assets/Azeez.jpeg";
+import Rack from "../assets/rack.jpg";
 
 interface ProfilePageProps {
   scrollToProjects: () => void;
@@ -49,8 +50,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ scrollToProjects }) => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1920&auto=format&fit=crop")',
+         backgroundImage: `url(${Rack})`,
         }}
       />
       {/* Blue gradient overlay to improve contrast (heavier on left, transparent right) */}

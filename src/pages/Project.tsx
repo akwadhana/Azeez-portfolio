@@ -125,7 +125,7 @@ const Star = ({ className = "h-4 w-4" }: { className?: string }) => (
   </svg>
 );
 
-/* ========== Utils ========== */
+
 function formatBudget(value: number, currency: string = "USD"): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",

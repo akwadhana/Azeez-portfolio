@@ -28,7 +28,7 @@ const experiences = [
   {
     role: "Scrum Master / Project Manager",
     company: "Stanix Consult Ltd",
-    period: "Jul – Oct 2024",
+    period: "Jul – Oct 2025",
     bullets: [
       "Led Agile teams to deliver two digital products: Thriftly (Ajo) and MentorOS.",
       "Coordinated sprint cycles, backlog refinement, and release management.",
