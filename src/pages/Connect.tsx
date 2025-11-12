@@ -1,12 +1,6 @@
 import React, { useMemo, useState, type ChangeEvent, type FormEvent } from "react";
 
 /* ---------- Data ---------- */
-const stats = [
-  { value: "20+", label: "Enterprise Projects" },
-  { value: "$3.1M+", label: "Total Project Value" },
-  { value: "96%", label: "On-Time Delivery" },
-  { value: "100%", label: "Client Satisfaction" },
-];
 
 interface Contact {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
