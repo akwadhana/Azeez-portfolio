@@ -1,6 +1,3 @@
-
-
-
 const certifications = [
   { name: "PMP (PMI)", detail: "Project Management Professional" },
   { name: "ScrumStudy", detail: "Scrum Master Certification" },
@@ -60,16 +57,16 @@ const CheckIcon = () => (
 /* ========== Main Component ========== */
 export default function SkillsEducation() {
   return (
-    <section className="bg-slate-50 py-8 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <section className="bg-slate-50 py-8 text-slate-900">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 md:grid-cols-2">
 
         {/* Certifications */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="mb-4 flex items-center gap-2">
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600">
               <RibbonIcon />
             </span>
-            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">
+            <h3 className="text-lg font-semibold text-slate-800">
               Certifications
             </h3>
           </div>
@@ -77,10 +74,10 @@ export default function SkillsEducation() {
           <ul className="space-y-3">
             {certifications.map((c) => (
               <li key={c.name} className="flex items-start gap-3">
-                <span className="mt-1 rounded-full bg-emerald-50 p-1 ring-1 ring-emerald-200 dark:bg-emerald-900/20 dark:ring-emerald-900/40">
+                <span className="mt-1 rounded-full bg-emerald-50 p-1 ring-1 ring-emerald-200">
                   <CheckIcon />
                 </span>
-                <p className="text-sm text-slate-700 dark:text-slate-300">
+                <p className="text-sm text-slate-700">
                   <span className="font-semibold">{c.name}</span>
                   {c.detail && <span> — {c.detail}</span>}
                 </p>
@@ -90,12 +87,12 @@ export default function SkillsEducation() {
         </div>
 
         {/* Tools */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="mb-4 flex items-center gap-2">
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600">
               <WrenchIcon />
             </span>
-            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">
+            <h3 className="text-lg font-semibold text-slate-800">
               Tools & Technologies
             </h3>
           </div>
@@ -105,13 +102,13 @@ export default function SkillsEducation() {
               <div key={i} className="space-y-5">
                 {groupCol.map((g) => (
                   <div key={g.title}>
-                    <h4 className="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                    <h4 className="mb-2 text-sm font-semibold text-slate-700">
                       {g.title}
                     </h4>
                     <ul className="space-y-1.5">
                       {g.items.map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-slate-400 dark:bg-slate-500" />
+                        <li key={item} className="flex items-center gap-2 text-sm text-slate-600">
+                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-slate-400" />
                           {item}
                         </li>
                       ))}
@@ -124,12 +121,12 @@ export default function SkillsEducation() {
         </div>
 
         {/* Education */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:col-span-2">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:col-span-2">
           <div className="mb-4 flex items-center gap-2">
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-blue-600">
               <HatIcon />
             </span>
-            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">
+            <h3 className="text-lg font-semibold text-slate-800">
               Education
             </h3>
           </div>
@@ -139,10 +136,10 @@ export default function SkillsEducation() {
               <li key={e.degree} className="flex items-start gap-3">
                 <span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-blue-500" />
                 <div>
-                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+                  <p className="text-sm font-semibold text-slate-800">
                     {e.degree}
                   </p>
-                  <p className="text-sm text-slate-600 dark:text-slate-300">
+                  <p className="text-sm text-slate-600">
                     {e.school} ({e.year})
                   </p>
                 </div>

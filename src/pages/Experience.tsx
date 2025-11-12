@@ -76,9 +76,9 @@ const CheckIcon = ({ className = "h-3.5 w-3.5" }: { className?: string }) => (
 
 function Bullet({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-      <span className="mt-1 rounded-full bg-emerald-50 p-0.5 ring-1 ring-emerald-200 dark:bg-emerald-900/20 dark:ring-emerald-900/40">
-        <CheckIcon className="text-emerald-600 dark:text-emerald-400" />
+    <li className="flex items-start gap-2 text-sm text-slate-700">
+      <span className="mt-1 rounded-full bg-emerald-50 p-0.5 ring-1 ring-emerald-200">
+        <CheckIcon className="text-emerald-600" />
       </span>
       <span className="leading-relaxed">{children}</span>
     </li>
@@ -106,14 +106,14 @@ const itemVariants: Variants = {
 /* ========== Main Component ========== */
 export default function ExperienceTimeline() {
   return (
-    <section className="bg-white sm:bg-slate-50 py-10 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <section className="bg-white py-10 text-slate-900">
       <div className="mx-auto max-w-full sm:max-w-5xl px-4 sm:px-6">
         {/* Header */}
         <header className="mb-6 text-center">
           <h2 className="text-2xl font-semibold sm:text-3xl">
             Professional Experience
           </h2>
-          <p className="mx-auto mt-2 max-w-full sm:max-w-3xl text-sm text-slate-600 dark:text-slate-400">
+          <p className="mx-auto mt-2 max-w-full sm:max-w-3xl text-sm text-slate-600">
             Over 5 years of progressive experience in IT project management,
             delivering enterprise solutions across banking, telecom, public
             sector, and fintech industries.
@@ -129,7 +129,7 @@ export default function ExperienceTimeline() {
           className="relative"
         >
           {/* Vertical line */}
-          <span className="absolute left-5 sm:left-6 top-0 h-full w-px bg-blue-100 dark:bg-blue-900/40" />
+          <span className="absolute left-5 sm:left-6 top-0 h-full w-px bg-blue-100" />
 
           <div className="space-y-6">
             {experiences.map((exp) => (
@@ -139,23 +139,23 @@ export default function ExperienceTimeline() {
                 className="relative pl-10 sm:pl-12"
               >
                 {/* Timeline dot */}
-                <span className="absolute left-5 sm:left-6 top-7 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-500 ring-4 ring-blue-100 dark:ring-blue-900/50" />
+                <span className="absolute left-5 sm:left-6 top-7 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-500 ring-4 ring-blue-100" />
 
                 {/* Card */}
-                <article className="rounded-2xl border border-blue-200/60 bg-white p-5 shadow-sm ring-1 ring-blue-100/60 transition hover:shadow-md sm:p-6">
+                <article className="rounded-2xl border border-blue-200/60 bg-white p-5 shadow-sm ring-1 ring-blue-100 transition hover:shadow-md sm:p-6">
                   <header className="mb-2">
-                    <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+                    <p className="text-sm font-semibold text-slate-800">
                       {exp.role}
                     </p>
-                    <p className="mt-1 text-sm font-medium text-blue-700 dark:text-blue-300">
+                    <p className="mt-1 text-sm font-medium text-blue-700">
                       {exp.company}
                     </p>
 
-                    <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                    <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
                       <CalendarIcon />
                       <span>{exp.period}</span>
                       {exp.current && (
-                        <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-700 ring-1 ring-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:ring-emerald-900/40">
+                        <span className="rounded-full bg-emerald-50 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-700 ring-1 ring-emerald-200">
                           Current
                         </span>
                       )}
