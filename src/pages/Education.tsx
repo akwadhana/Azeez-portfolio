@@ -74,7 +74,7 @@ export default function SkillsEducation() {
           <ul className="space-y-3">
             {certifications.map((c) => (
               <li key={c.name} className="flex items-start gap-3">
-                <span className="mt-1 rounded-full bg-emerald-50 p-1 ring-1 ring-emerald-200">
+                <span className="mt-1 rounded-full bg-green-500 p-1 ring-1 ring-green-200">
                   <CheckIcon />
                 </span>
                 <p className="text-sm text-slate-700">
@@ -108,7 +108,7 @@ export default function SkillsEducation() {
                     <ul className="space-y-1.5">
                       {g.items.map((item) => (
                         <li key={item} className="flex items-center gap-2 text-sm text-slate-600">
-                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-slate-400" />
+                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-400" />
                           {item}
                         </li>
                       ))}
@@ -134,7 +134,7 @@ export default function SkillsEducation() {
           <ul className="space-y-5">
             {education.map((e) => (
               <li key={e.degree} className="flex items-start gap-3">
-                <span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-blue-500" />
+                <span className="mt-2 inline-block h-2.5 w-2.5 rounded-full bg-green-500" />
                 <div>
                   <p className="text-sm font-semibold text-slate-800">
                     {e.degree}
